@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment form</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Payment form</h1>
+<p>Required field are followd by *.</p>
+    <form action="/kontaktai" method="POST" autocomplete="on" novalidate>
+        <h2>Contact information</h2>
+            <label for="name">Name:*</label>
+            <input name="name" type="text" id="name" /><br>
+            <label for="email">E-mail:*</label>
+            <input name="email" type="email" id="email" /><br>
+            <label for="psw">Password:*</label>
+            <input name="password" type="text" id="psw" /><br>
+        <h2>Payment information</h2>
+            <label for="ctype">Card type:</label>
+            <select name="cardType" id="ctype">
+                <option value="Visa">Visa</option>
+                <option value="MasterCard">MasterCard</option>
+                <option value="Telebimbam">Telebimbam</option>
+            </select><br>
+            <label for="cnr">Card number:*</label>
+            <input name="cardNumber" type="text" id="cnr" /><br>
+            <label for="exp">Expiration date:*</label>
+            <input name="expirationDate" type="date" id="exp" /><br>
+            <label for="terms">Agree with terms and conditions</label>
+            <input name="terms" type="checkbox" id="terms" /><br>
+            <button type="submit" onclick="alert('Payment made!')">Validate the payment</button><br>
+    </form>
+</body>
+<a href="/">GO BACK HOME</a><br>
+</html>

@@ -5,12 +5,60 @@
     <meta charset="UTF-8">
 </head>
 <body>
-<input name="name" placeholder="Jūsų vardas" type="text" id="n" /><br>
-<input name="email" placeholder="Jūsų el. pašto adresas" type="text" id="email" /><br>
-<input name="messageTheme" placeholder="Žinutės tema" type="text" id="msgTheme" /><br>
-<textarea name="message" rows="3" cols="20" id="zinute" placeholder="Žinutė"></textarea><br>
-<button type="button" onclick="alert('Žinutė išsiųsta!')">Siųsti žinutę</button><br>
+    <form action="/" method="POST" autocomplete="on" novalidate>
+        <input name="name" placeholder="Jūsų vardas" type="text" id="n" /><br>
+        <input name="email" placeholder="Jūsų el. pašto adresas" type="text" id="email" /><br>
+        <input name="messageTheme" placeholder="Žinutės tema" type="text" id="msgTheme" /><br>
+        <textarea name="message" rows="3" cols="20" placeholder="Žinutė" id="msg"></textarea><br>
+        <button type="submit">Siųsti žinutę</button><br>
+    </form><br>
+<div id="confirmation" style="display: none;">
+    <p id="confirmation-message">Your message has been received!</p>
+    <p id="captured-data"></p>
+</div>
 </body>
 <br>
 <a href="/">GO BACK HOME</a><br>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function (event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        // Simulate form submission (replace with actual AJAX request if needed)
+        // You can add your form data processing logic here.
+        // For this example, we're simulating a successful submission.
+        const formData = new FormData(event.target);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const messageTheme = formData.get('messageTheme');
+        const message = formData.get('message');
+
+        // Display the confirmation message and captured form data
+        const confirmationMessage = document.getElementById('confirmation-message');
+        const capturedData = document.getElementById('captured-data');
+        confirmationMessage.textContent = 'Your message has been received!';
+        capturedData.textContent = `Name: ${name}, Email: ${email}, Theme: ${messageTheme}, Message: ${message}`;
+        document.getElementById('confirmation').style.display = 'block';
+    });
+</script>
+
+
 </html>
+
+<form action="#">
+    <label for="">
+        <input type="text" name="vardas">
+    </label>
+    <label for="">
+        <input type="text" name="pavarde">
+    </label>
+    <label for="">
+        <input type="email" name="elpastas">
+    </label>
+    <label for="">
+    <textarea name="zinute" id="" cols="30" rows="10">
+    </textarea>
+</label>
+    <button type="submit"></button>
+</form>

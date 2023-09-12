@@ -1,34 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PUSLAPIO PAVADINIMAS xdd 'title' </title>
+    <title>Puslapio struktura KRČ</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+
 <header>
-  <h1>Website Header</h1>
+    <img src="https://i.kym-cdn.com/entries/icons/original/000/030/710/dd0.png" alt="Logo" id="logo"/>
+    <div class="mainHeader">
+        BEST SVETAINE EVER
+    </div>
+    <div class="searchBox">
+        <button type="button" onclick="alert('vrum vrum ieškom...')">Search</button>
+        <input name="Search" placeholder="Search Box" type="text" id="search"/>
+    </div>
 </header>
-<nav>
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
+
+
 <main>
-  <article>
-    <h2>Article Title</h2>
-    <p>Article content goes here.</p>
-  </article>
-  <section>
-    <h2>Another Section</h2>
-    <p>Content for another section.</p>
-  </section>
+    <div class="leftSide">
+        <label>Kur keliaujam?</label>
+        <ul>
+            <li><a href="/duomenys.html">Duomenys</a><br></li>
+            <li><a href="/krc.html">Karoče</a><br></li>
+            <li><a href="/kontaktai.html">Kontaktai</a><br></li>
+            <li><a href="/portfolio">Portfolio</a><br></li>
+            <li><a href="/">Home</a></li>
+        </ul>
+    </div>
+
+    <div class="centerContent">
+        <p >CONTENT</p>
+        <p >CONTENT</p>
+        <p >CONTENT</p>
+        <p >CONTENT</p>
+        <p id="specialus">CONTENT (id="specialus" šitas)</p>
+        <p >CONTENT</p>
+        <p >CONTENT</p>
+        <p >CONTENT</p>
+    </div>
+
+    <div class="rightSide">
+        <img src="/img/calendar.webp" alt="Calendar" class="calendar"/><br>
+        <img src="/img/your ad.jpg" alt="ad" class="ad"/>
+    </div>
 </main>
 <footer>
-  <p>Copyright © 2023</p>
+    <h3>Copyright © 2023</h3>
+    <h3><a href="/">GO BACK HOME</a></h3></br>
 </footer>
-<br>
-<a href="/">GO BACK HOME</a></br>
+
 </body>
 </html>
