@@ -1,32 +1,89 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>PUSLAPIO PAVADINIMAS</title>
+    <title>Puslapio struktura KRČ</title>
     <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="/css/krc.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/plytos.css">
+
+
 </head>
+
 <body>
+<div class="brick-wall"></div>
+<div id="resolution-display"></div>
+<header>
+    <img src="https://i.kym-cdn.com/entries/icons/original/000/030/710/dd0.png" alt="Logo" id="logo"/>
+    <h1 class="mainHeader">WORST SVETAINĖ  EVER</h1>
+    <div class="searchBox">
+        <button type="button" onclick="alert('vrum vrum ieškom...')">Search</button>
+        <input name="Search" placeholder="Search Box" type="text" id="search"/>
+    </div>
+</header>
+
+<aside class="leftSide">
+        <button id="menuButton">Kur keliaujam?</button><br>
+        <ul class="menu hidden">
+            <li><a href="duomenys.html">Duomenys</a><br></li>
+            <li><a href="krc.html">Karoče</a><br></li>
+            <li><a href="kontaktai.html">Kontaktai</a><br></li>
+            <li><a href="portfolio">Portfolio</a><br></li>
+            <li><a href="">Home</a></li>
+            <li><a href="parduotuve.html">PARDUOTUVE</a></li>
+        </ul>
+</aside>
+
 <main>
-    <h1 title="Labai gera antraštė, ane?">Čia tipo H1 antraštė</h1>
-        <p>Čia 1 paragrafas</p>
-        <p>
-        <b>Čia</b> <strong>2</strong> <i>paragrafas.</i><br>
-        <del>Formatuojam</del> <ins>tekstą</ins> <sup>visaip,</sup>
-        <em>kaip</em> <mark>tik</mark> <small>sugalvojam.</small>
-        <sub>Čia submarinas.</sub> <br> <b><ins><i>StorasPasviresIrKreivasŽodis</i></ins></b>
-        </p>
-        <p>Čia 3 paragrafas</p>
-    <h2>Čia tipo antraštė H2</h2>
-        <p>Čia 1 paragrafas</p>
-        <p>Čia 2 paragrafas</p>
+    <button id="contentButton">Kur kontentas?</button>
+    <div class="centerContent">
+        <div class="sachmatai">
+            <div>&lt;DIV 1&gt;</div>
+            <div>&lt;DIV 2&gt;</div>
+            <div>&lt;DIV 3&gt;</div>
+            <div>&lt;DIV 4&gt;</div>
+            <div>&lt;DIV 5&gt;</div>
+            <div>&lt;DIV 6&gt;</div>
+            <div>&lt;DIV 7&gt;</div>
+            <div>&lt;DIV 8&gt;</div>
+            <div>&lt;DIV 9&gt;</div>
+            <div>&lt;DIV 10&gt;</div>
+            <div>&lt;DIV 11&gt;</div>
+            <div>&lt;DIV 12&gt;</div>
+            <div>&lt;DIV 13&gt;</div>
+            <div>&lt;DIV 14&gt;</div>
+            <div>&lt;DIV 15&gt;</div>
+            <div>&lt;DIV 16&gt;</div>
+            <div>&lt;DIV 17&gt;</div>
+            <div>&lt;DIV 18&gt;</div>
+            <div>&lt;DIV 19&gt;</div>
+            <div>&lt;DIV 20&gt;</div>
+            <div>&lt;DIV 21&gt;</div>
+            <div>&lt;DIV 22&gt;</div>
+            <div>&lt;DIV 23&gt;</div>
+            <div>&lt;DIV 24&gt;</div>
+            <div>&lt;DIV 25&gt;</div>
+        </div>
+    </div>
 </main>
-<br>
-<h3>Kur einam?</h3>
-    <ul>
-        <li><a href="/duomenys.html">Duomenys</a><br></li>
-        <li><a href="/krc.html">Karoče</a><br></li>
-        <li><a href="/kontaktai.html">Kontaktai</a><br></li>
-        <li><a href="/portfolio">Portfolio</a><br></li>
-        <li><a href="/didele_forma.html">didele forma</a><br></li>
-    </ul>
+
+<aside class="rightSide">
+        <img src="/img/calendar.webp" alt="Calendar" class="calendar"/><br>
+        <img src="/img/your ad.jpg" alt="ad" class="ad"/>
+    </aside>
+
+<footer>
+    <h3>Copyright © 2023</h3><br>
+    <a href="/">GO BACK HOME</a>
+</footer>
+
+<script src="js/meniu.js"></script>
+<script src="js/event_listeners.js"></script>
+<script src="js/bricks.js"></script>
+
+
 </body>
+
 </html>

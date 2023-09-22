@@ -1,0 +1,41 @@
+.sachmatai > div {
+    width: 75px;
+    height: 75px;
+    margin: 25px;
+    padding: 5px;
+    background-color: #92C47D;
+    text-align: center;
+    line-height: 75px;
+    border: solid;
+}
+
+.sachmatai {               /* This is our CSS grid parent container */
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px 100px;       /* 5 cols */
+  grid-template-rows:    100px 100px 100px 100px 100px;       /* 5 rows */
+  grid-gap: 3px;
+  place-items: center;
+}
+
+.table {
+    display: flex;
+    justify-content: center;
+    align-item: center;
+}
+
+.sachmatai > div:nth-of-type(odd) {
+    background-color: #666666;
+}
+
+.sachmatai > div:nth-of-type(4n+2) {
+    background-color: #A2C4C8;
+}
+
+.sachmatai > div:nth-of-type(2n+16) {
+    background-color: #F4CCCC;
+}
+
+.sachmatai > div:hover {
+    background-color: lightcoral;
+    transform: scale(1.1); /* Scale up the div on hover */
+}

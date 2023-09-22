@@ -1,72 +1,32 @@
-p:nth-child(odd):not(#specialus){
-font-family: Verdana, sans-serif;
-font-weight: bold;
-color: red;
-}
-
-#specialus{
-color:orange;
-font-family: Garamond, sans-serif;
-}
-
-.mainHeader, .searchBox{
-vertical-align: middle;
-display: inline-block;
-}
-
 #logo{
-text-align: left;
-vertical-align: middle;
-width: 10%;
+  width: 100px;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  justify-self: center;
 }
 
+.ad, .calendar{
+width: 100px;
+object-fit: contain;
+}
 .mainHeader{
-margin: 20px;
-font-size: 30px;
-text-align: center;
-width: 50%;
-border-style: outset;
+  margin: 10px;
+  padding: 5px 10px; /* Adjust the padding to control the space between text and border */
+  border: 5px outset #666; /* Border style and color */
+  border-radius: 5px; /* Rounded corners for the border */
+  max-width: 100%;
+  inline-size: fit-content;
+  justify-self: center;
 }
 
-.searchBox{
-display: inline-block;
-width: 20%;
-}
-
-.leftSide{
-vertical-align: middle;
-display: inline-block;
-text-align: left;
-width: 15%;
-}
-
-.centerContent{
+main{
 border-style: dashed;
 background-color: #FEDDBD;
-vertical-align: middle;
-display: inline-block;
-text-align: center;
-width: 50%;
-}
-
-.rightSide
-{
-vertical-align: middle;
-display: inline-block;
-width: 25%;
-}
-
-.calendar, .ad{
-width: 40%;
-}
-
-footer, header, main{
-text-align: center;
-}
-
-h3{
-font-weight: bold;
-width: 90%
+flex-direction: column;
+justify-content: stretch;
+align-items: stretch;
+overflow: auto;
 }
 
 a{
@@ -74,7 +34,7 @@ color: #FEDDBD;
 }
 
 body{
-background-color: #1B303F;
+background-color: dimgray;
 color: white;
 }
 
@@ -82,3 +42,68 @@ color: white;
 color: #1B303F;
 }
 
+header{
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  align-items: center;
+}
+
+main{
+grid-area: main;
+display: flex;
+}
+.leftSide{
+grid-area: left;
+}
+.rightSide{
+grid-area: right;
+display: flex;
+}
+
+footer{
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-area: foot;
+}
+
+body{
+  display: grid;
+  grid-gap: 10px;
+  place-items: center;
+  grid-template-columns: 2fr 8fr 2fr;
+  grid-template-rows: 2fr 10fr 2fr;
+  grid-template-areas:
+    "header header header"
+    "left main right"
+    "foot foot foot";
+}
+
+.sachmatai > div:hover {
+  background-color: lightcoral;
+  transform: scale(1.1); /* Scale up the div on hover */
+}
+.hidden {
+  display: none;
+}
+
+#resolution-display {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.menu{
+  list-style: none;
+  background-color: #333;
+  padding: 50px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+li{
+  padding: 5px 0;
+}

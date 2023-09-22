@@ -1,0 +1,23 @@
+.brick-wall {
+    display: grid;
+    grid-template-columns: repeat(50, 75px);
+    padding: 1px;
+    position: absolute;
+    left: -27px;
+    z-index: -1;
+}
+.brick {
+    background-color: darkred;
+    border-radius: 5px;
+    border: 1px solid black;
+    min-height: 30px;
+    min-width: 70px;
+    padding: 1px;
+    margin: 1px;
+}
+
+.brick-wall .brick:nth-child(3n) {
+    background-color: brown;
+}
+
+
