@@ -4,6 +4,7 @@
 <head>
     <title>Puslapio struktura KRČ</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="/css/krc.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -19,13 +20,13 @@
     <img src="https://i.kym-cdn.com/entries/icons/original/000/030/710/dd0.png" alt="Logo" id="logo"/>
     <h1 class="mainHeader">WORST SVETAINĖ  EVER</h1>
     <div class="searchBox">
-        <button type="button" onclick="alert('vrum vrum ieškom...')">Search</button>
+        <button type="button" onclick="alert('vrum vrum ieškom...')" id="searchBtn">Search</button>
         <input name="Search" placeholder="Search Box" type="text" id="search"/>
     </div>
 </header>
 
 <aside class="leftSide">
-        <button id="menuButton">Kur keliaujam?</button><br>
+        <div id="menuButton">Menu</div>
         <ul class="menu hidden">
             <li><a href="duomenys.html">Duomenys</a><br></li>
             <li><a href="krc.html">Karoče</a><br></li>
@@ -37,51 +38,43 @@
 </aside>
 
 <main>
-    <button id="contentButton">Kur kontentas?</button>
-    <div class="centerContent">
+    <div id="contentButton">Content</div>
+    <div class="centerContent hidden" >
         <div class="sachmatai">
-            <div>&lt;DIV 1&gt;</div>
-            <div>&lt;DIV 2&gt;</div>
-            <div>&lt;DIV 3&gt;</div>
-            <div>&lt;DIV 4&gt;</div>
-            <div>&lt;DIV 5&gt;</div>
-            <div>&lt;DIV 6&gt;</div>
-            <div>&lt;DIV 7&gt;</div>
-            <div>&lt;DIV 8&gt;</div>
-            <div>&lt;DIV 9&gt;</div>
-            <div>&lt;DIV 10&gt;</div>
-            <div>&lt;DIV 11&gt;</div>
-            <div>&lt;DIV 12&gt;</div>
-            <div>&lt;DIV 13&gt;</div>
-            <div>&lt;DIV 14&gt;</div>
-            <div>&lt;DIV 15&gt;</div>
-            <div>&lt;DIV 16&gt;</div>
-            <div>&lt;DIV 17&gt;</div>
-            <div>&lt;DIV 18&gt;</div>
-            <div>&lt;DIV 19&gt;</div>
-            <div>&lt;DIV 20&gt;</div>
-            <div>&lt;DIV 21&gt;</div>
-            <div>&lt;DIV 22&gt;</div>
-            <div>&lt;DIV 23&gt;</div>
-            <div>&lt;DIV 24&gt;</div>
-            <div>&lt;DIV 25&gt;</div>
+
         </div>
     </div>
 </main>
 
 <aside class="rightSide">
-        <img src="/img/calendar.webp" alt="Calendar" class="calendar"/><br>
-        <img src="/img/your ad.jpg" alt="ad" class="ad"/>
-    </aside>
-
+    <button id="megstami">Chuck Norris</button>
+    <div class="juokelisContent hidden">
+    <ul id="chuckCategories"></ul>
+    </div>
+</aside>
+<ul id="chuckJokes" class="hidden">
+    <button id="issaugoti">Add Selected to Favorites</button>
+    <button id="istrinti">Clear Favorites</button>
+    <button id="rodyti">Display Favorites</button>
+    <button id="istrinti2">Clear Current</button>
+</ul>
 <footer>
-    <h3>Copyright © 2023</h3><br>
+    <div id="labas">
+        <input type="text" id="data">
+        <button id="save">saugoti</button>
+        <p id="pvz">Kas cia dabar vyksta</p>
+    </div>
+
+    <h2>Copyright © 2023</h2><br>
     <a href="/">GO BACK HOME</a>
 </footer>
 
 <script src="js/meniu.js"></script>
 <script src="js/event_listeners.js"></script>
 <script src="js/bricks.js"></script>
+<script src="js/indexo.js"></script>
+<script src="js/news.js"></script>
+<script src="js/juokeliai.js"></script>
 
 
 </body>

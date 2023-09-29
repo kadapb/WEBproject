@@ -7,7 +7,10 @@ const menuButton = document.getElementById("menuButton");
 const contentButton = document.getElementById("contentButton");
 const menu = document.querySelector(".menu");
 const divai = document.querySelectorAll('.sachmatai > div')
-const sachmatai = document.querySelector('.sachmatai')
+const centerContent = document.querySelector('.centerContent')
+const juokelisButton = document.querySelector('#megstami')
+const juokelisContent = document.querySelector('.juokelisContent')
+const jokeList = document.getElementById('chuckJokes')
 
 header.addEventListener('click', function(){
     console.log('You clicked the Header!');
@@ -20,7 +23,12 @@ menuButton.addEventListener("click", () => {
 });
 
 contentButton.addEventListener("click", () => {
-    sachmatai.classList.toggle("hidden");
+    centerContent.classList.toggle("hidden");
+});
+
+juokelisButton.addEventListener("click", () => {
+    juokelisContent.classList.toggle("hidden");
+    jokeList.classList.toggle("hidden");
 });
 
 divai.forEach(function (divas) {

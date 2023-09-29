@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kontaktai</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+<form action="/" method="POST" autocomplete="on" novalidate>
+    <input name="skaicius" placeholder="Jūsų skaičius" type="text" id="nr" /><br>
+</form><br>
+
+</body>
+<br>
+<a href="/">GO BACK HOME</a><br>
+
+<script>
+    const formele = document.querySelector('form');
+    const inputas = document.getElementById('nr');
+    let pElement = null; // Declare pElement before using it
+
+    inputas.addEventListener('blur', (event) => {
+        console.log('Input lost focus');
+        const skaicius = inputas.value;
+
+        // Check if pElement exists and remove it if it does
+        if (pElement) {
+            pElement.parentNode.removeChild(pElement);
+        }
+
+        // Create a paragraph element and set its content
+        pElement = document.createElement('p');
+
+        if (isNaN(skaicius) || skaicius < 0 || skaicius > 99) {
+            pElement.innerHTML = `NETEISINGAI - "${skaicius}" nera skaicius, arba nera tarp 0 ir 99.`;
+            pElement.style.padding = '5px';
+            pElement.style.background = '#ffcccb';
+            pElement.style.color = '#8B0000';
+            pElement.style.width = getComputedStyle(inputas).width;
+
+            // Append the paragraph element below the input field
+            inputas.parentNode.insertBefore(pElement, inputas.nextSibling);
+        } else {
+            pElement.innerHTML = `TEISINGAI - "${skaicius}" yra tarp 0 ir 99`;
+            pElement.style.padding = '5px';
+            pElement.style.background = '#90EE90';
+            pElement.style.color = '#006400';
+            pElement.style.width = getComputedStyle(inputas).width;
+
+            // Append the paragraph element above the input field
+            inputas.parentNode.insertBefore(pElement, inputas);
+        }
+
+        // Clear the input field
+        inputas.value = "";
+    });
+
+</script>
+
+
+</html>

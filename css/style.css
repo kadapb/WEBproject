@@ -18,15 +18,19 @@ object-fit: contain;
   max-width: 100%;
   inline-size: fit-content;
   justify-self: center;
+  background: goldenrod;
 }
 
-main{
-border-style: dashed;
-background-color: #FEDDBD;
-flex-direction: column;
-justify-content: stretch;
-align-items: stretch;
-overflow: auto;
+.centerContent{
+  border-style: dashed;
+  background-color: #FEDDBD;
+  overflow: auto;
+  color: #1B303F;
+  position: relative;
+  margin: 5px;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center;
 }
 
 a{
@@ -38,9 +42,6 @@ background-color: dimgray;
 color: white;
 }
 
-.centerContent{
-color: #1B303F;
-}
 
 header{
   grid-area: header;
@@ -50,23 +51,25 @@ header{
 }
 
 main{
-grid-area: main;
-display: flex;
+  grid-area: mid;
 }
 .leftSide{
 grid-area: left;
 }
 .rightSide{
 grid-area: right;
-display: flex;
 }
 
 footer{
-  grid-template-columns: 1fr 3fr 1fr;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   grid-area: foot;
+  place-items: center;
 }
 
 body{
+  max-width: 1000px;
+  height: 200px;
   display: grid;
   grid-gap: 10px;
   place-items: center;
@@ -74,7 +77,7 @@ body{
   grid-template-rows: 2fr 10fr 2fr;
   grid-template-areas:
     "header header header"
-    "left main right"
+    "left mid right"
     "foot foot foot";
 }
 
@@ -103,7 +106,85 @@ body{
   margin: 0;
   font-family: Arial, sans-serif;
   font-size: 16px;
+  position: absolute;
 }
 li{
-  padding: 5px 0;
+  padding: 2px;
 }
+
+#menuButton, #contentButton, #megstami, #save, #searchBtn {
+  background: goldenrod;;
+  border: dimgray outset;
+  width: 125px;
+  height: 35px;
+  font-family: cursive;
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  text-align: center; /* Center text within the container */
+  position: relative;
+  color: whitesmoke;
+  font-size: medium;
+  cursor: url(https://cur.cursors-4u.net/others/oth-5/oth435.cur), auto
+}
+
+.leftSide, .rightSide, main{
+  align-self: start;
+}
+
+#chuckJokes{
+  grid-area: mid;
+  background: darkslategray;
+  color: whitesmoke;
+  list-style: none;
+  border: outset 2px saddlebrown;
+  padding: 10px;
+  max-height: 350px; /* Set a max height as needed */
+  overflow-y: auto; /* Add a vertical scrollbar if content exceeds max height */
+}
+
+.juokelisContent, .menu{
+  background: darkslategray;
+  border: outset 2px saddlebrown;
+}
+
+#chuckCategories{
+  list-style: none;
+  height: 400px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-left: -35px;
+}
+
+#chuckCategories>li{
+  border: outset 2px saddlebrown;
+}
+.searchBox, #labas{
+  display: grid;
+  place-items: center;
+}
+#search{
+  padding: 2px;
+  margin: 10px;
+}
+#chuckJokes>li>span{
+  font-size: 30px;
+  cursor: url(https://cur.cursors-4u.net/others/oth-5/oth435.cur), auto
+}
+
+#chuckJokes>li>span:hover{
+  font-size: 50px
+}
+/*#chuckJokes>button{*/
+/*  background: goldenrod;;*/
+/*  border: dimgray outset;*/
+/*  width: 110px;*/
+/*  height: 25px;*/
+/*  font-family: cursive;*/
+/*  justify-content: center; !* Horizontally center the content *!*/
+/*  align-items: center; !* Vertically center the content *!*/
+/*  text-align: center; !* Center text within the container *!*/
+/*  color: whitesmoke;*/
+/*  font-size: medium;*/
+/*}*/
+

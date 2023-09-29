@@ -1,66 +1,98 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kontaktai</title>
+    <title>Sample Form</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Apply styles to the form */
+        form {
+            width: 300px; /* Set the desired width for the form */
+        }
 
+        /* Apply styles to the form elements */
+        input[type="text"], input[type="email"], textarea{
+            width: 100%; /* Make the input fields and textareas 100% wide */
+            min-width: 100%;
+            text-align: left; /* Align the text to the right */
+            margin: 10px;
+        }
+        textarea{
+            height: 50px;
+            min-height: 5px;
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
-    <form action="/" method="POST" autocomplete="on" novalidate>
-        <input name="name" placeholder="Jūsų vardas" type="text" id="n" /><br>
-        <input name="email" placeholder="Jūsų el. pašto adresas" type="text" id="email" /><br>
-        <input name="messageTheme" placeholder="Žinutės tema" type="text" id="msgTheme" /><br>
-        <textarea name="message" rows="3" cols="20" placeholder="Žinutė" id="msg"></textarea><br>
-        <button type="submit">Siųsti žinutę</button><br>
-    </form><br>
-<div id="confirmation" style="display: none;">
-    <p id="confirmation-message">Your message has been received!</p>
-    <p id="captured-data"></p>
-</div>
-</body>
-<br>
-<a href="/">GO BACK HOME</a><br>
+<!-- JavaScript will generate the form here -->
 
 <script>
-    document.querySelector('form').addEventListener('submit', function (event) {
-        // Prevent the default form submission behavior
-        event.preventDefault();
+    // Define form data as an array of objects
+    const formData = [
+        {
+            'name': { 'type': 'text', 'label': 'Vardas' },
+            'surname': { 'type': 'text', 'label': 'Pavarde' },
+            'email': { 'type': 'email', 'label': 'El. pašto adresas' },
+            'message': { 'type': 'textarea', 'label': 'Žinutė mums' },
+        }
+    ];
 
-        // Simulate form submission (replace with actual AJAX request if needed)
-        // You can add your form data processing logic here.
-        // For this example, we're simulating a successful submission.
-        const formData = new FormData(event.target);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const messageTheme = formData.get('messageTheme');
-        const message = formData.get('message');
 
-        // Display the confirmation message and captured form data
-        const confirmationMessage = document.getElementById('confirmation-message');
-        const capturedData = document.getElementById('captured-data');
-        confirmationMessage.textContent = 'Your message has been received!';
-        capturedData.textContent = `Name: ${name}, Email: ${email}, Theme: ${messageTheme}, Message: ${message}`;
-        document.getElementById('confirmation').style.display = 'block';
+    function getFormData(){return formData;}
+
+    // Function to generate the form HTML
+    function generateFormHTML(data) {
+        let formHTML = '<form id="myForm">';
+
+        for (const fieldName in data[0]) {
+            const fieldData = data[0][fieldName];
+            const fieldType = fieldData.type;
+            const fieldLabel = fieldData.label;
+
+            formHTML += `
+                    <label>${fieldLabel}</label>
+                    ${fieldType === 'textarea' ? '<textarea' : '<input'} type="${fieldType}" name="${fieldName}"></${
+                fieldType === 'textarea' ? 'textarea' : 'input'
+            }>
+                    <br>`;
+        }
+
+        formHTML += `
+                <input type="submit" value="Submit">
+            </form>`;
+
+        return formHTML;
+    }
+    const formosData = getFormData()
+    // Create the form element by calling the function
+    const formHTML = generateFormHTML(formosData);
+
+    // Append the form to the body
+    document.body.innerHTML = formHTML;
+
+    // Add a submit event listener to the form
+    const myForm = document.getElementById('myForm');
+    myForm.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Access form elements and their values
+        const elements = event.target.elements;
+        const nameValue = elements.name.value;
+        const surnameValue = elements.surname.value;
+        const emailValue = elements.email.value;
+        const messageValue = elements.message.value;
+
+        // Create a response message
+        const responseMessage = document.createElement('p');
+        responseMessage.innerHTML = `Vardas: ${nameValue}, Pavarde: ${surnameValue}, El. pašto adresas: ${emailValue}, Žinutė mums: ${messageValue}`;
+        responseMessage.style.background = '#90EE90';
+        responseMessage.style.color = '#006400';
+        responseMessage.style.padding = '5px';
+        responseMessage.style.width = getComputedStyle(myForm).width;
+        // Append the response message to the form
+        myForm.parentNode.insertBefore(responseMessage, myForm);
+
     });
 </script>
-
-
+</body>
 </html>
-
-<form action="#">
-    <label for="">
-        <input type="text" name="vardas">
-    </label>
-    <label for="">
-        <input type="text" name="pavarde">
-    </label>
-    <label for="">
-        <input type="email" name="elpastas">
-    </label>
-    <label for="">
-    <textarea name="zinute" id="" cols="30" rows="10">
-    </textarea>
-</label>
-    <button type="submit"></button>
-</form>

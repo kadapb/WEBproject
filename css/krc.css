@@ -1,26 +1,23 @@
 .sachmatai > div {
-    width: 75px;
-    height: 75px;
-    margin: 25px;
-    padding: 5px;
+    width: 50px; /* Adjust the width */
+    height: 50px; /* Adjust the height */
+    margin: 5px; /* Adjust margins as needed */
+    padding: 4px;
     background-color: #92C47D;
     text-align: center;
-    line-height: 75px;
     border: solid;
 }
 
-.sachmatai {               /* This is our CSS grid parent container */
-  display: grid;
-  grid-template-columns: 100px 100px 100px 100px 100px;       /* 5 cols */
-  grid-template-rows:    100px 100px 100px 100px 100px;       /* 5 rows */
-  grid-gap: 3px;
-  place-items: center;
-}
 
-.table {
-    display: flex;
-    justify-content: center;
-    align-item: center;
+.sachmatai {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 3px;
+    place-items: center;
+    max-height: 400px; /* Set a max height as needed */
+    overflow-y: auto; /* Add a vertical scrollbar if content exceeds max height */
+
 }
 
 .sachmatai > div:nth-of-type(odd) {
