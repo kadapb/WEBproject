@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JqueryTest</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body style="background:teal;">
+
+<img style="max-width: 250px;" id="image" src="img/img1.webp" alt="Image 1">
+<button id="keiciamBtn">opa</button>
+<script>
+    $(document).ready(function() {
+        $("#keiciamBtn").click(function() {
+            // Toggle between two image sources
+            $("#image").attr("src", ($("#image").attr("src") === "img/img1.webp") ? "img/trying to help.jpg" : "img/img1.webp");
+        });
+    });
+</script>
+</body>
+</html>
